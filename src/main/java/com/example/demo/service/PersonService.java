@@ -16,9 +16,6 @@ public class PersonService {
     // bura gonderilen name varsa age deyish, yoxdusa elave ele
 
     public void create(Person person) {
-
-    }
-    public void add(String name, int age) {
         boolean tapildimi = false;
 
         for (Person personh : list) {
@@ -43,14 +40,11 @@ public class PersonService {
     }
 
     public void delete(String name) {
-
         for (Person person : list) {
             if (person.getName().equals(name)) {
                 list.remove(person);
             }
         }
-
-
     }
 
     public ResponseEntity<String> update(String name, Person age) {
