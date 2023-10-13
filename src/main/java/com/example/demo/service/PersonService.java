@@ -19,19 +19,19 @@ public class PersonService {
         boolean tapildimi = false;
 
         for (Person personh : list) {
-            if (personh.getName().equals(name)) {
+            if (personh.getName().equals(person.getName())) {
                 tapildimi = true;
-                personh.setAge(age);
+                personh.setAge(person.getAge());
             }
         }
 
         System.out.println("Emeliyyat bitdi");
 
         if (!tapildimi) {
-            Person person = new Person();
-            person.setName(name);
-            person.setAge(age);
-            list.add(person);
+            Person newPerson = new Person();
+            newPerson.setName(person.getName());
+            newPerson.setAge(person.getAge());
+            list.add(newPerson);
         }
     }
 
@@ -54,7 +54,7 @@ public class PersonService {
         for (Person person : list) {
             if (person.getName().equals(name)) {
                 tapildimi = true;
-                person.setAge(age);
+                person.setAge(age.getAge());
             }
         }
 
@@ -67,12 +67,11 @@ public class PersonService {
 
     public Person get(String name) {
         for (Person person : list) {
-            if (person.getName().equals("Reyhan")) {
-
-
+            if (person.getName().equals(name)) {
+                return person;
             }
 
         }
-        return listOfPerson("Reyhan");
+       return null;
     }
 }
